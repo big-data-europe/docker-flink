@@ -3,7 +3,7 @@
 
 # Start the flink cluster
 # jobmanager.sh start cluster
-/usr/local/flink/bin/jobmanager.sh start cluster
+/usr/local/flink/bin/jobmanager.sh start cluster #local #cluster
 echo "Cluster started."
 #sleep infinity
 

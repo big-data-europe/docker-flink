@@ -2,6 +2,10 @@ FROM java:8
 
 MAINTAINER Gezim Sejdiu <g.sejdiu@gmail.com>
 
+#add passless key to ssh
+RUN ssh-keygen -f ~/.ssh/id_rsa -t rsa -N ''
+RUN cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/*
+
 ##Flink 0.10.1 Installation
 ###Download:
 
