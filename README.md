@@ -20,6 +20,6 @@ To start a Flink worker:
 ## Launch a Flink application
 Building and running your Flink application on top of the Flink cluster by using docker image flink-submit.
 
-docker run flink-submit
-  ${FLINK_APPLICATION_JAR_LOCATION} \
-  ${FLINK_APPLICATION_ARGS}
+    docker run flink-submit
+  			${FLINK_APPLICATION_JAR_LOCATION} \
+  			${FLINK_APPLICATION_ARGS}
