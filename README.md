@@ -10,12 +10,12 @@ Currently supported versions:
 ## Flink Master
 To start a FLink master:
 
-    docker run --name flink-master -h flink-master -d gezim/flink-master:0.10.1-hadoop2.7
+    docker run --name flink-master -h flink-master -d bde2020/flink-master:0.10.1-hadoop2.7
 
 ## Flink Worker
 To start a Flink worker:
 
-    docker run --name flink-worker --link flink-master:flink-master -d gezim/flink-worker:0.10.1-hadoop2.7
+    docker run --name flink-worker --link flink-master:flink-master -d bde/flink-worker:0.10.1-hadoop2.7
 
 ## Launch a Flink application
 Building and running your Flink application on top of the Flink cluster by using docker image flink-submit.
