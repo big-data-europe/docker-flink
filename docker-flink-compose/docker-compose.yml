@@ -1,0 +1,18 @@
+flinkmaster:
+    image: bde2020/flink-master:0.10.1-hadoop2.7
+    ports:
+        - "48080:8080"
+        - "220:22"
+    expose:
+        - "6123"
+        - "22"
+flinkworker:
+    image: bde2020/flink-worker:0.10.1-hadoop2.7
+    ports:
+        - "22"
+        - "48081:8081"
+    expose:
+        - "6121"
+        - "6122"
+    links:
+        - flinkmaster:flink-master
