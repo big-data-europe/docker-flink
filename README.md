@@ -19,7 +19,16 @@ To start a Flink worker:
 
 ## Launch a Flink application
 Building and running your Flink application on top of the Flink cluster by using docker image flink-submit.
+#### Steps to extend the flink-submit image
 
-    docker run flink-submit
-  			${FLINK_APPLICATION_JAR_LOCATION} \
-  			${FLINK_APPLICATION_ARGS}
+1. Modify a Dockerfile in the flink-submit folder
+2. Configure the following environment variables:
+  * `FLINK_APPLICATION_JAR_NAME` (default: application-1.0)
+  * `FLINK_APPLICATION_ARGS` (default: "")
+4. Build and run the image
+```
+docker build --rm=true -t bde2020/flink-submit:0.10.1-hadoop2.7 .
+docker run --name flink-demo-app --link flink-master:flink-master -d bde2020/flink-submit:0.10.1-hadoop2.7
+```
+
+The sources in the project folder will be automatically added to `/usr/src/app` if you directly extend the flink-submit image.

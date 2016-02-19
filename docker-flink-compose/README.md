@@ -23,21 +23,12 @@ chmod +x /usr/local/bin/docker-compose
 
 `docker-compose kill`
 
-- Upload a jar to the cluster
+- Run a Flink Application
 
-`scp -P 220 <your_jar> root@localhost:/<your_path>`
-
-- Run a topology
-
-`ssh -p 220 root@localhost /usr/local/flink/bin/flink run -c <your_class> <your_jar> <your_params>`
-
-or
-
-ssh to the job manager and run the topology from there.
+See [big-data-europe/docker-flink README](https://github.com/big-data-europe/docker-flink) for a description how to lunch a flink application on docker flink images.
 
 ###Ports
 
 - The Web Dashboard is on port `48080`
 - The Web Client is on port `48081`
 
-Edit the `docker-compose.yml` file to edit port settings.
