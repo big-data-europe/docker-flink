@@ -7,15 +7,43 @@ Apache Flink docker images to:
 Currently supported versions:
 * Flink 0.10.1 for Hadoop 2.7
 
+## Using Docker Compose
+
+Add the following services to your `docker-compose.yml` to integrate a Flink master and Flink worker in [your BDE pipeline](https://github.com/big-data-europe/app-bde-pipeline): 
+```
+flinkmaster:
+    image: bde2020/flink-master:0.10.1-hadoop2.7
+    ports:
+        - "48080:8080"
+        - "220:22"
+    environment:
+      INIT_DAEMON_STEP: setup_flink
+    expose:
+        - "6123"
+        - "22"
+flinkworker:
+    image: bde2020/flink-worker:0.10.1-hadoop2.7
+    ports:
+        - "22"
+        - "48081:8081"
+    expose:
+        - "6121"
+        - "6122"
+    links:
+        - "flinkmaster:flink-master"
+
+```
+
+## Running Docker containers without the init daemon
 ## Flink Master
 To start a FLink master:
 
-    docker run --name flink-master -h flink-master -d bde2020/flink-master:0.10.1-hadoop2.7
+    docker run --name flink-master -h flink-master -e ENABLE_INIT_DAEMON=false -d bde2020/flink-master:0.10.1-hadoop2.7
 
 ## Flink Worker
 To start a Flink worker:
 
-    docker run --name flink-worker --link flink-master:flink-master -d bde2020/flink-worker:0.10.1-hadoop2.7
+    docker run --name flink-worker --link flink-master:flink-master -e ENABLE_INIT_DAEMON=false -d bde2020/flink-worker:0.10.1-hadoop2.7
 
 ## Launch a Flink application
 Building and running your Flink application on top of the Flink cluster by using docker image flink-submit.
