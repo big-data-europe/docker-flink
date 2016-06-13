@@ -1,0 +1,15 @@
+flinkmaster:
+    image: bde2020/flink-master:0.10.1-hadoop2.7
+    hostname: flink-master
+    environment:
+      - INIT_DAEMON_STEP=setup_flink
+#    networks:
+#      - flink
+flinkworker:
+    image: bde2020/flink-worker:0.10.1-hadoop2.7
+    hostname: flink-worker
+#    networks:
+#     - flink
+    links:
+      - "flinkmaster:localhost"
+

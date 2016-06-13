@@ -13,22 +13,10 @@ Add the following services to your `docker-compose.yml` to integrate a Flink mas
 ```
 flinkmaster:
     image: bde2020/flink-master:0.10.1-hadoop2.7
-    ports:
-        - "48080:8080"
-        - "220:22"
     environment:
       INIT_DAEMON_STEP: setup_flink
-    expose:
-        - "6123"
-        - "22"
 flinkworker:
     image: bde2020/flink-worker:0.10.1-hadoop2.7
-    ports:
-        - "22"
-        - "48081:8081"
-    expose:
-        - "6121"
-        - "6122"
     links:
         - "flinkmaster:flink-master"
 
@@ -36,7 +24,7 @@ flinkworker:
 
 ## Running Docker containers without the init daemon
 ## Flink Master
-To start a FLink master:
+To start a Flink master:
 
     docker run --name flink-master -h flink-master -e ENABLE_INIT_DAEMON=false -d bde2020/flink-master:0.10.1-hadoop2.7
 
@@ -46,17 +34,16 @@ To start a Flink worker:
     docker run --name flink-worker --link flink-master:flink-master -e ENABLE_INIT_DAEMON=false -d bde2020/flink-worker:0.10.1-hadoop2.7
 
 ## Launch a Flink application
-Building and running your Flink application on top of the Flink cluster by using docker image flink-submit.
-#### Steps to extend the flink-submit image
+Building and running your Flink application on top of the Flink cluster is as simple as extending a template Docker image. Check the template's README for further documentation.
+* [Maven template](https://github.com/big-data-europe/docker-flink/tree/master/template/maven)
+* Sbt template (will be added soon)
 
-1. Modify a Dockerfile in the flink-submit folder
-2. Configure the following environment variables:
-  * `FLINK_APPLICATION_JAR_NAME` (default: application-1.0)
-  * `FLINK_APPLICATION_ARGS` (default: "")
-4. Build and run the image
-```
-docker build --rm=true -t bde2020/flink-submit:0.10.1-hadoop2.7 .
-docker run --name flink-demo-app --link flink-master:flink-master -d bde2020/flink-submit:0.10.1-hadoop2.7
-```
 
-The sources in the project folder will be automatically added to `/usr/src/app` if you directly extend the flink-submit image.
+## TODOs
+* Scale the cluster up or down to N TaskManagers
+
+
+    docker-compose scale taskmanager=<N>
+
+
+
