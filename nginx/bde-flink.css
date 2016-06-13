@@ -1,0 +1,84 @@
+body {
+    background: #F1F1F1;
+}
+
+.mainHeading {
+    margin: 0;
+    color: white;
+    border: none;
+    background: #A94F74;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+.mainHeading > h1 > div {
+    top: 20px !important;
+    right: 20px !important;
+}
+
+#jobsContents {
+    padding: 10px;
+    border: 0;
+    border-radius: 2px;
+    background: white;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);
+}
+
+#jobsContents + div {
+    padding: 10px;
+    border: 0;
+    border-radius: 2px;
+    background: white;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);
+}
+
+div.canvas {
+    margin: 0;
+}
+
+.footer .boxed {
+    height: auto !important;
+    width: auto !important;
+    padding: 0 20px;
+    border: none;
+    border-radius: 2px;
+    background: white;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);
+}
+
+.footer .boxed > div {
+    margin-top: 20px !important;
+}
+
+.footer .boxed > div #suspendedOption > span {
+    position: absolute;
+}
+
+.footer .boxed:first-of-type > .footer {
+    padding: 0 20px 10px;
+}
+
+.footer .boxed:nth-of-type(2) > .footer {
+    position: relative;
+    padding: 0 0 10px;
+}
+
+#upload_file_name_text {
+    width: auto !important;
+}
+
+#upload_form > div {
+    margin-top: 20px !important;
+}
+
+#upload_file_name_text {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    width: calc(100% - 85px) !important;
+}
+
+#upload_file_input {
+    height: 100% !important;
+    width: 75px;
+    padding: 0;
+}
