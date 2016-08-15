@@ -42,6 +42,3 @@ Building and running your Flink application on top of the Flink cluster is as si
 ## TODOs
 * Scale the cluster up or down to *N* TaskManagers
   `docker-compose scale taskmanager=<N>`
-
-
-
