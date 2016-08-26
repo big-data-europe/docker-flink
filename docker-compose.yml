@@ -11,5 +11,5 @@ flinkworker:
 #    networks:
 #     - flink
     links:
-      - "flinkmaster:localhost"
+      - "flinkmaster:flink-master"
 
