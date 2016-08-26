@@ -25,7 +25,7 @@
 # The JobManager process will use this hostname to bind the listening servers to.
 # The TaskManagers will try to connect to the JobManager on that host.
 
-jobmanager.rpc.address: flink-master
+jobmanager.rpc.address:  %jobmanager%
 
 
 # The port where the JobManager's main actor system listens for messages.

@@ -28,6 +28,6 @@ ENV PATH $PATH:$FLINK_HOME/bin
 
 #config files (template)
 ADD flink-conf.yaml /usr/local/flink/conf/
-ADD masters /usr/local/flink/conf/
-ADD slaves /usr/local/flink/conf/
+#ADD masters /usr/local/flink/conf/
+#ADD slaves /usr/local/flink/conf/
 
