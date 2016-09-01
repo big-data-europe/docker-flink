@@ -8,6 +8,8 @@ COPY template.sh /
 
 RUN apt-get update \
       && apt-get install -y maven \
+      && apt-get clean \ 
+      && rm -rf /var/lib/apt/lists/* \
       && chmod +x /template.sh \
       && update-java-alternatives -s java-1.8.0-openjdk-amd64 \
       && mkdir -p /app \
