@@ -1,4 +1,4 @@
-FROM bde2020/flink-submit:0.10.1-hadoop2.7
+FROM bde2020/flink-submit:0.10.2-hadoop2.7
 
 MAINTAINER Gezim Sejdiu <g.sejdiu@gmail.com>
 

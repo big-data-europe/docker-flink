@@ -5,18 +5,19 @@ Apache Flink docker images to:
 * Build Flink applications in Scala, Java or Python to run on a Flink cluster
 
 Currently supported versions:
-* Flink 0.10.1 for Hadoop 2.7
+* Flink 0.10.2 for Hadoop 2.7 and Scala 2.11
+* Flink 0.10.1 for Hadoop 2.7 and Scala 2.11
 
 ## Using Docker Compose
 
 Add the following services to your `docker-compose.yml` to integrate a Flink master and Flink worker in [your BDE pipeline](https://github.com/big-data-europe/app-bde-pipeline): 
 ```
 flinkmaster:
-    image: bde2020/flink-master:0.10.1-hadoop2.7
+    image: bde2020/flink-master:latest
     environment:
       INIT_DAEMON_STEP: setup_flink
 flinkworker:
-    image: bde2020/flink-worker:0.10.1-hadoop2.7
+    image: bde2020/flink-worker:latest
     links:
         - "flinkmaster:flink-master"
 
@@ -26,12 +27,12 @@ flinkworker:
 ## Flink Master
 To start a Flink master:
 
-    docker run --name flink-master -h flink-master -e ENABLE_INIT_DAEMON=false -d bde2020/flink-master:0.10.1-hadoop2.7
+    docker run --name flink-master -h flink-master -e ENABLE_INIT_DAEMON=false -d bde2020/flink-master:latest
 
 ## Flink Worker
 To start a Flink worker:
 
-    docker run --name flink-worker --link flink-master:flink-master -e ENABLE_INIT_DAEMON=false -d bde2020/flink-worker:0.10.1-hadoop2.7
+    docker run --name flink-worker --link flink-master:flink-master -e ENABLE_INIT_DAEMON=false -d bde2020/flink-worker:latest
 
 ## Launch a Flink application
 Building and running your Flink application on top of the Flink cluster is as simple as extending a template Docker image. Check the template's README for further documentation.
