@@ -6,6 +6,10 @@ MAINTAINER Gezim Sejdiu <g.sejdiu@gmail.com>
 RUN ssh-keygen -f ~/.ssh/id_rsa -t rsa -N ''
 RUN cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/*
 
+ENV FLINK_VERSION=0.10.2
+ENV HADOOP_VERSION=27
+ENV SCALA_VERSION=2.11
+
 #Enable poc-init-daemon
 ENV ENABLE_INIT_DAEMON true
 ENV INIT_DAEMON_BASE_URI http://identifier/init-daemon
@@ -15,13 +19,15 @@ COPY wait-for-step.sh /
 COPY execute-step.sh /
 COPY finish-step.sh /
 
-##Flink 0.10.1 Installation
+##Flink  Installation
 ###Download:
 
-RUN apt-get update \
-      && wget http://mirror.switch.ch/mirror/apache/dist/flink/flink-0.10.1/flink-0.10.1-bin-hadoop27-scala_2.11.tgz \
-      && tar -xvzf flink-0.10.1-bin-hadoop27-scala_2.11.tgz \
-      && mv flink-0.10.1 /usr/local/flink 
+RUN   apt-get update  \
+      && chmod +x *.sh \
+      && wget http://mirror.switch.ch/mirror/apache/dist/flink/flink-${FLINK_VERSION}/flink-${FLINK_VERSION}-bin-hadoop${HADOOP_VERSION}-scala_${SCALA_VERSION}.tgz \
+      && tar -xvzf flink-${FLINK_VERSION}-bin-hadoop${HADOOP_VERSION}-scala_${SCALA_VERSION}.tgz \
+      && rm flink-${FLINK_VERSION}-bin-hadoop${HADOOP_VERSION}-scala_${SCALA_VERSION}.tgz \
+      && mv flink-${FLINK_VERSION} /usr/local/flink 
 
 ENV FLINK_HOME /usr/local/flink
 ENV PATH $PATH:$FLINK_HOME/bin

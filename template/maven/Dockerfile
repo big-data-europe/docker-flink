@@ -1,4 +1,4 @@
-FROM bde2020/flink-submit:0.10.1-hadoop2.7
+FROM bde2020/flink-submit:0.10.2-hadoop2.7
 
 MAINTAINER Gezim Sejdiu <g.sejdiu@gmail.com>
 
@@ -8,6 +8,8 @@ COPY template.sh /
 
 RUN apt-get update \
       && apt-get install -y maven \
+      && apt-get clean \ 
+      && rm -rf /var/lib/apt/lists/* \
       && chmod +x /template.sh \
       && update-java-alternatives -s java-1.8.0-openjdk-amd64 \
       && mkdir -p /app \

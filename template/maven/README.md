@@ -31,7 +31,7 @@ If you overwrite the template's `CMD` in your Dockerfile, make sure to execute t
 
 #### Example Dockerfile
 ```
-FROM bde2020/flink-maven-template:0.10.1-hadoop2.7
+FROM bde2020/flink-maven-template:latest
 
 MAINTAINER Gezim Sejdiu <g.sejdiu@gmail.com>
 
@@ -40,5 +40,5 @@ ENV FLINK_APPLICATION_ARGS "arg1 arg2"
 ```
 
 #### Example application
-Will come soon!!!!!.
+See [flink-starter](https://github.com/gezims/flink-starter).
 
