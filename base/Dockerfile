@@ -19,22 +19,15 @@ COPY wait-for-step.sh /
 COPY execute-step.sh /
 COPY finish-step.sh /
 
-##Flink  Installation
+##Flink Installation
 ###Download:
 
-<<<<<<< HEAD
-RUN   wget http://mirror.switch.ch/mirror/apache/dist/flink/flink-0.10.1/flink-0.10.1-bin-hadoop27-scala_2.11.tgz \
-      && tar -xvzf flink-0.10.1-bin-hadoop27-scala_2.11.tgz \
-      && rm flink-0.10.1-bin-hadoop27-scala_2.11.tgz \
-      && mv flink-0.10.1 /usr/local/flink 
-=======
 RUN   apt-get update  \
       && chmod +x *.sh \
       && wget http://mirror.switch.ch/mirror/apache/dist/flink/flink-${FLINK_VERSION}/flink-${FLINK_VERSION}-bin-hadoop${HADOOP_VERSION}-scala_${SCALA_VERSION}.tgz \
       && tar -xvzf flink-${FLINK_VERSION}-bin-hadoop${HADOOP_VERSION}-scala_${SCALA_VERSION}.tgz \
       && rm flink-${FLINK_VERSION}-bin-hadoop${HADOOP_VERSION}-scala_${SCALA_VERSION}.tgz \
       && mv flink-${FLINK_VERSION} /usr/local/flink 
->>>>>>> 0.10.2-hadoop2.7
 
 ENV FLINK_HOME /usr/local/flink
 ENV PATH $PATH:$FLINK_HOME/bin
