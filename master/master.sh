@@ -5,8 +5,8 @@ sed -i -e "s/%jobmanager%/`hostname -i`/g" /usr/local/flink/conf/flink-conf.yaml
 /usr/local/flink/bin/jobmanager.sh start cluster #local #cluster
 echo "Cluster started."
 #sleep infinity
-# Start the web client
-/usr/local/flink/bin/start-webclient.sh
+# Start the web client -- for newest version of Flink is integrated on Flink Dashboard
+#/usr/local/flink/bin/start-webclient.sh
 
 #mkdir -p $FLINK_MASTER_LOG
 
