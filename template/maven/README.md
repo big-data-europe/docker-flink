@@ -14,6 +14,7 @@ The Maven `package` command must create an assembly JAR (or 'uber' JAR) containi
 2. Extend the Flink Maven template Docker image
 3. Configure the following environment variables (unless the default value satisfies):
   * `FLINK_APPLICATION_JAR_NAME` (default: application-1.0)
+  * `FLINK_APPLICATION_MAIN_CLASS` (default: my.main.Job)
   * `FLINK_APPLICATION_ARGS` (default: "")
 4. Build and run the image
 ```
@@ -36,6 +37,7 @@ FROM bde2020/flink-maven-template:latest
 MAINTAINER Gezim Sejdiu <g.sejdiu@gmail.com>
 
 ENV FLINK_APPLICATION_JAR_NAME my-app-1.0-SNAPSHOT-with-dependencies
+ENV FLINK_APPLICATION_MAIN_CLASS my.main.Job
 ENV FLINK_APPLICATION_ARGS "arg1 arg2"
 ```
 
