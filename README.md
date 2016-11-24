@@ -13,14 +13,28 @@ Currently supported versions:
 
 Add the following services to your `docker-compose.yml` to integrate a Flink master and Flink worker in [your BDE pipeline](https://github.com/big-data-europe/app-bde-pipeline): 
 ```
-flinkmaster:
-    image: bde2020/flink-master:latest
-    environment:
-      INIT_DAEMON_STEP: setup_flink
-flinkworker:
-    image: bde2020/flink-worker:latest
-    links:
-        - "flinkmaster:flink-master"
+flink-master:
+   image: bde2020/flink-master
+   hostname: flink-master
+   container_name: flink-master
+   domainname: hadoop
+   networks:
+     - hadoop
+   environment:
+      - INIT_DAEMON_STEP=setup_flink
+   ports:
+     - "8080:8080"
+     - "8081:8081"
+
+ flink-worker:
+   image: bde2020/flink-worker
+   hostname: flink-worker
+   container_name: flink-worker
+   domainname: hadoop
+   networks: 
+     - hadoop
+   environment:
+     - FLINK_MASTER_PORT_6123_TCP_ADDR=flink-master
 
 ```
 
