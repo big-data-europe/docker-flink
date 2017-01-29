@@ -5,7 +5,7 @@ The Flink SBT template image serves as a base image to build your own SBT applic
 ### Package your application using SBT
 You can build and launch your application on a Flink cluster by extending this image with your sources. The template uses [SBT](http://www.scala-sbt.org/) as build tool, so make sure you have a `build.sbt` file for your application specifying all the dependencies.
 
-The SBT `package` command must create an assembly JAR (or 'uber' JAR) containing your code and its dependencies. Flink and Hadoop dependencies should be listes as `provided`.
+The SBT `assembly` command must create an assembly JAR (or 'uber' JAR) containing your code and its dependencies. Flink and Hadoop dependencies should be listes as `provided`.
 
 ### Extending the Flink SBT template with your application
 
@@ -26,7 +26,8 @@ The sources in the project folder will be automatically added to `/usr/src/app` 
 
     COPY . /usr/src/app
     RUN cd /usr/src/app \
-        && mvn clean package
+        && sbt clean assembly
+
       
 If you overwrite the template's `CMD` in your Dockerfile, make sure to execute the `/template.sh` script at the end.
 
