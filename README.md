@@ -19,11 +19,10 @@ flink-master:
    image: bde2020/flink-master
    hostname: flink-master
    container_name: flink-master
-   domainname: hadoop
-   networks:
-     - hadoop
    environment:
       - INIT_DAEMON_STEP=setup_flink
+#     - "constraint:node==<yourmasternode>"
+
    ports:
      - "8080:8080"
      - "8081:8081"
@@ -32,11 +31,11 @@ flink-master:
    image: bde2020/flink-worker
    hostname: flink-worker
    container_name: flink-worker
-   domainname: hadoop
-   networks: 
-     - hadoop
    environment:
-     - FLINK_MASTER_PORT_6123_TCP_ADDR=flink-master
+     - "FLINK_MASTER_PORT_6123_TCP_ADDR=flink-master"
+     - "constraint:node==<yourworkernode>"
+   depends_on:
+      - "flink-master"
 
 ```
 
