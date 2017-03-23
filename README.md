@@ -13,7 +13,7 @@ Currently supported versions:
 
 ## Using Docker Compose
 
-Add the following services to your `docker-compose.yml` to integrate a Flink master and Flink worker in [your BDE pipeline](https://github.com/big-data-europe/app-bde-pipeline): 
+Add the following services to your `docker-compose.yml` to integrate a Flink master and Flink worker in [your BDE pipeline](https://github.com/big-data-europe/app-bde-pipeline):
 ```
 flink-master:
    image: bde2020/flink-master
@@ -53,6 +53,4 @@ To start a Flink worker:
 ## Launch a Flink application
 Building and running your Flink application on top of the Flink cluster is as simple as extending a template Docker image. Check the template's README for further documentation.
 * [Maven template](https://github.com/big-data-europe/docker-flink/tree/master/template/maven)
-* [Sbt template] (https://github.com/big-data-europe/docker-flink/tree/master/template/sbt)
-
-
+* [Sbt template](https://github.com/big-data-europe/docker-flink/tree/master/template/sbt)
