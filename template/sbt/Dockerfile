@@ -1,4 +1,4 @@
-FROM bde2020/flink-submit:1.2.0-hadoop2.7
+FROM bde2020/flink-submit:1.2.1-hadoop2.7
 
 MAINTAINER Gezim Sejdiu <g.sejdiu@gmail.com>
 
@@ -20,7 +20,7 @@ RUN apt-get update \
       && rm sbt-$SBT_VERSION.deb \
       && apt-get update \
       && apt-get install sbt \
-      && apt-get clean \ 
+      && apt-get clean \
       && rm -rf /var/lib/apt/lists/* \
       && chmod +x /template.sh \
       && update-java-alternatives -s java-1.8.0-openjdk-amd64 \
