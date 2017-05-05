@@ -1,4 +1,4 @@
-version: '2' 
+version: '2'
 services:
  flink-master:
    image: bde2020/flink-master
@@ -19,13 +19,14 @@ services:
    hostname: flink-worker
    container_name: flink-worker
 #   domainname: hadoop
-#   networks: 
+#   networks:
 #     - hadoop
    environment:
-     - "FLINK_MASTER_PORT_6123_TCP_ADDR=flink-master"
-     - "constraint:node==<yourworkernode>"
+     - FLINK_MASTER_PORT_6123_TCP_ADDR=flink-master
+#     - FLINK_NUM_TASK_SLOTS=2
+#    - "constraint:node==<yourworkernode>"
    depends_on:
-      - "flink-master" 
+      - flink-master
 
 #networks:
 #  hadoop:

@@ -32,8 +32,9 @@ flink-master:
    hostname: flink-worker
    container_name: flink-worker
    environment:
-     - "FLINK_MASTER_PORT_6123_TCP_ADDR=flink-master"
-     - "constraint:node==<yourworkernode>"
+     - FLINK_MASTER_PORT_6123_TCP_ADDR=flink-master
+#    - FLINK_NUM_TASK_SLOTS=2
+#    - "constraint:node==<yourworkernode>"
    depends_on:
       - "flink-master"
 
