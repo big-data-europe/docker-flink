@@ -5,6 +5,7 @@ Apache Flink docker images to:
 * Build Flink applications in Scala, Java or Python to run on a Flink cluster
 
 Currently supported versions:
+* Flink 1.3.0 for Hadoop 2.7 and Scala 2.11
 * Flink 1.2.1 for Hadoop 2.7 and Scala 2.11
 * Flink 1.2.0 for Hadoop 2.7 and Scala 2.11
 * Flink 1.1.4 for Hadoop 2.7 and Scala 2.11
