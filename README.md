@@ -46,6 +46,9 @@ flink-master:
 ```
 
 ## Running Docker containers without the init daemon
+
+    docker network create flink-net
+
 ## Flink Master
 To start a Flink master:
 
@@ -54,7 +57,7 @@ To start a Flink master:
 ## Flink Worker
 To start a Flink worker:
 
-    docker run --name flink-worker --link flink-master:flink-master -e ENABLE_INIT_DAEMON=false -d bde2020/flink-worker:latest
+    docker run --name flink-worker --link flink-master:flink-master -e ENABLE_INIT_DAEMON=false -e FLINK_MASTER_PORT_6123_TCP_ADDR=flink-master -d bde2020/flink-worker:latest
 
 ## Launch a Flink application
 Building and running your Flink application on top of the Flink cluster is as simple as extending a template Docker image. Check the template's README for further documentation.
