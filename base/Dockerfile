@@ -21,7 +21,7 @@ COPY finish-step.sh /
 
 ##Flink Installation
 ###Download:
-
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends net-tools curl netcat
 RUN   apt-get update \
       && apt-get install dnsutils -y  \
       && chmod +x *.sh \
