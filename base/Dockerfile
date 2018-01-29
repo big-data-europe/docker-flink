@@ -21,7 +21,6 @@ COPY finish-step.sh /
 
 ##Flink Installation
 ###Download:
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends net-tools curl netcat
 RUN   apt-get update \
       && apt-get install dnsutils -y  \
       && chmod +x *.sh \
@@ -37,3 +36,11 @@ ENV PATH $PATH:$FLINK_HOME/bin
 #ADD flink-conf.yaml /usr/local/flink/conf/
 #ADD masters /usr/local/flink/conf/
 #ADD slaves /usr/local/flink/conf/
+
+# add netcat for SERVICE_PRECONDITION checks
+RUN apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends netcat
+
+COPY entrypoint.sh /
+
+ENTRYPOINT ["/entrypoint.sh"]
