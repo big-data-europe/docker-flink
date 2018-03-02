@@ -1,5 +1,7 @@
+#!/bin/bash
 # Start the flink cluster
 # jobmanager.sh start cluster
+
 echo "Configuring Job Manager on this node"
 #sed -i -e "s/%jobmanager%/`hostname -i`/g" /usr/local/flink/conf/flink-conf.yaml
 sed -i -e "s/jobmanager.rpc.address: localhost/jobmanager.rpc.address: `hostname -i`/g" /usr/local/flink/conf/flink-conf.yaml

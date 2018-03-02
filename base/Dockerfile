@@ -6,7 +6,11 @@ MAINTAINER Gezim Sejdiu <g.sejdiu@gmail.com>
 RUN ssh-keygen -f ~/.ssh/id_rsa -t rsa -N ''
 RUN cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/*
 
+<<<<<<< HEAD
 ENV FLINK_VERSION=1.4.0
+=======
+ENV FLINK_VERSION=1.4.1
+>>>>>>> 1.4.1-hadoop2.8
 ENV HADOOP_VERSION=28
 ENV SCALA_VERSION=2.11
 
@@ -21,7 +25,6 @@ COPY finish-step.sh /
 
 ##Flink Installation
 ###Download:
-
 RUN   apt-get update \
       && apt-get install dnsutils -y  \
       && chmod +x *.sh \
@@ -37,3 +40,11 @@ ENV PATH $PATH:$FLINK_HOME/bin
 #ADD flink-conf.yaml /usr/local/flink/conf/
 #ADD masters /usr/local/flink/conf/
 #ADD slaves /usr/local/flink/conf/
+
+# add netcat for SERVICE_PRECONDITION checks
+RUN apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends netcat
+
+COPY entrypoint.sh /
+
+ENTRYPOINT ["/entrypoint.sh"]
