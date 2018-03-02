@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-FROM bde2020/flink-submit:1.4.0-hadoop2.8
-=======
 FROM bde2020/flink-submit:1.4.1-hadoop2.8
->>>>>>> 1.4.1-hadoop2.8
 
 MAINTAINER Gezim Sejdiu <g.sejdiu@gmail.com>
 
