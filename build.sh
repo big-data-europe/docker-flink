@@ -2,7 +2,7 @@
 
 set -e
 
-TAG=1.4.0-hadoop2.7
+TAG=1.4.1-hadoop2.7
 
 build() {
     NAME=$1
@@ -18,4 +18,4 @@ build master
 build worker
 build submit
 build maven-template template/maven
-
+build sbt-template template/sbt
