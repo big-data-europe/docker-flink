@@ -1,4 +1,4 @@
-FROM bde2020/flink-base:1.4.2-hadoop2.8
+FROM bde2020/flink-base:1.5.0-hadoop2.8
 
 MAINTAINER Gezim Sejdiu <g.sejdiu@gmail.com>
 
