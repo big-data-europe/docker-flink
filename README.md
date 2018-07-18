@@ -28,7 +28,7 @@ Currently supported versions:
 ## Using Docker Compose
 
 Add the following services to your `docker-compose.yml` to integrate a Flink master and Flink worker in [your BDE pipeline](https://github.com/big-data-europe/app-bde-pipeline):
-```
+```yml
 flink-master:
    image: bde2020/flink-master:1.5.1-hadoop2.8
    hostname: flink-master
