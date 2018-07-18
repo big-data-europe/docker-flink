@@ -2,7 +2,7 @@
 
 set -e
 
-TAG=1.5.0-hadoop2.7
+TAG=1.5.1-hadoop2.7
 
 build() {
     NAME=$1
