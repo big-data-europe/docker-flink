@@ -33,7 +33,7 @@ If you overwrite the template's `CMD` in your Dockerfile, make sure to execute t
 
 #### Example Dockerfile
 ```
-FROM bde2020/flink-sbt-template:1.5.3-hadoop2.7
+FROM bde2020/flink-sbt-template:1.6.1-hadoop2.7
 
 MAINTAINER Gezim Sejdiu <g.sejdiu@gmail.com>
 
