@@ -6,7 +6,7 @@ MAINTAINER Gezim Sejdiu <g.sejdiu@gmail.com>
 RUN ssh-keygen -f ~/.ssh/id_rsa -t rsa -N ''
 RUN cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/*
 
-ENV FLINK_VERSION=1.7.0
+ENV FLINK_VERSION=1.7.1
 ENV HADOOP_VERSION=28
 ENV SCALA_VERSION=2.11
 
