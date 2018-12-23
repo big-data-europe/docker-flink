@@ -7,10 +7,16 @@ Apache Flink docker images to:
 Currently supported versions:
 * Flink 1.7.0 for Hadoop 2.8 and Scala 2.11
 * Flink 1.7.0 for Hadoop 2.7 and Scala 2.11
+* Flink 1.6.3 for Hadoop 2.8 and Scala 2.11
+* Flink 1.6.3 for Hadoop 2.7 and Scala 2.11
+* Flink 1.6.2 for Hadoop 2.8 and Scala 2.11
+* Flink 1.6.2 for Hadoop 2.7 and Scala 2.11
 * Flink 1.6.1 for Hadoop 2.8 and Scala 2.11
 * Flink 1.6.1 for Hadoop 2.7 and Scala 2.11
 * Flink 1.6.0 for Hadoop 2.8 and Scala 2.11
 * Flink 1.6.0 for Hadoop 2.7 and Scala 2.11
+* Flink 1.5.5 for Hadoop 2.8 and Scala 2.11
+* Flink 1.5.5 for Hadoop 2.7 and Scala 2.11
 * Flink 1.5.4 for Hadoop 2.8 and Scala 2.11
 * Flink 1.5.4 for Hadoop 2.7 and Scala 2.11
 * Flink 1.5.3 for Hadoop 2.8 and Scala 2.11
