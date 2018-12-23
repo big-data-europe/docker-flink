@@ -5,6 +5,7 @@ Apache Flink docker images to:
 * Build Flink applications in Scala, Java or Python to run on a Flink cluster
 
 Currently supported versions:
+* Flink 1.5.5 for Hadoop 2.7 and Scala 2.11
 * Flink 1.5.4 for Hadoop 2.7 and Scala 2.11
 * Flink 1.5.3 for Hadoop 2.7 and Scala 2.11
 * Flink 1.5.2 for Hadoop 2.7 and Scala 2.11
@@ -28,7 +29,7 @@ Currently supported versions:
 Add the following services to your `docker-compose.yml` to integrate a Flink master and Flink worker in [your BDE pipeline](https://github.com/big-data-europe/app-bde-pipeline):
 ```
 flink-master:
-   image: bde2020/flink-master:1.5.4-hadoop2.7
+   image: bde2020/flink-master:1.5.5-hadoop2.7
    hostname: flink-master
    container_name: flink-master
    environment:
@@ -40,7 +41,7 @@ flink-master:
      - "8081:8081"
 
  flink-worker:
-   image: bde2020/flink-worker:1.5.4-hadoop2.7
+   image: bde2020/flink-worker:1.5.5-hadoop2.7
    hostname: flink-worker
    container_name: flink-worker
    environment:
@@ -59,12 +60,12 @@ flink-master:
 ## Flink Master
 To start a Flink master:
 
-    docker run --name flink-master --net flink-net -e ENABLE_INIT_DAEMON=false -d bde2020/flink-master:1.5.4-hadoop2.7
+    docker run --name flink-master --net flink-net -e ENABLE_INIT_DAEMON=false -d bde2020/flink-master:1.5.5-hadoop2.7
 
 ## Flink Worker
 To start a Flink worker:
 
-    docker run --name flink-worker --net flink-net -e ENABLE_INIT_DAEMON=false -e FLINK_MASTER_PORT_6123_TCP_ADDR=flink-master -d bde2020/flink-worker:1.5.4-hadoop2.7
+    docker run --name flink-worker --net flink-net -e ENABLE_INIT_DAEMON=false -e FLINK_MASTER_PORT_6123_TCP_ADDR=flink-master -d bde2020/flink-worker:1.5.5-hadoop2.7
 
 ## Launch a Flink application
 Building and running your Flink application on top of the Flink cluster is as simple as extending a template Docker image. Check the template's README for further documentation.
