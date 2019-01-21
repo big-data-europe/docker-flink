@@ -35,6 +35,7 @@ Currently supported versions:
 * Flink 1.4.2 for Hadoop 2.7 and Scala 2.11
 * Flink 1.4.1 for Hadoop 2.8 and Scala 2.11
 * Flink 1.4.1 for Hadoop 2.7 and Scala 2.11
+* Flink 1.4.0 for Hadoop 2.8 and Scala 2.11
 * Flink 1.4.0 for Hadoop 2.7 and Scala 2.11
 * Flink 1.3.2 for Hadoop 2.7 and Scala 2.11
 * Flink 1.3.1 for Hadoop 2.7 and Scala 2.11
