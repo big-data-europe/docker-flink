@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/big-data-europe/docker-flink.svg?branch=master)](https://travis-ci.org/big-data-europe/docker-flink)
+[![Twitter](https://img.shields.io/twitter/follow/BigData_Europe.svg?style=social)](https://twitter.com/BigData_Europe)
 # Flink docker
 
 Apache Flink docker images to:
