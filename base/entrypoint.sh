@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export HADOOP_CLASSPATH=$(hadoop classpath)
+
 if [ ! -z "$SERVICE_PRECONDITION" ] ;then
     function wait_for_it()
     {

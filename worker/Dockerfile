@@ -1,6 +1,6 @@
-FROM bde2020/flink-base:1.7.2-hadoop2.8
+FROM bde2020/flink-base:1.12.2-hadoop3.2
 
-MAINTAINER Gezim Sejdiu <g.sejdiu@gmail.com>
+LABEL MAINTAINER="Gezim Sejdiu <g.sejdiu@gmail.com>"
 
 ADD worker.sh /
 
