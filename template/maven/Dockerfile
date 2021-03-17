@@ -1,6 +1,6 @@
-FROM bde2020/flink-submit:1.7.2-hadoop2.8
+FROM bde2020/flink-submit:1.12.2-hadoop3.2
 
-MAINTAINER Gezim Sejdiu <g.sejdiu@gmail.com>
+LABEL MAINTAINER="Gezim Sejdiu <g.sejdiu@gmail.com>"
 
 ENV FLINK_APPLICATION_JAR_NAME application-1.0
 
