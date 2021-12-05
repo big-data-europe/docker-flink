@@ -6,7 +6,7 @@ ENV FLINK_APPLICATION_JAR_NAME application-1.0
 
 # SBT & Scala
 ENV SCALA_VERSION=2.11.10
-ENV SBT_VERSION=1.4.1
+ENV SBT_VERSION=1.5.5
 
 
 COPY template.sh /
@@ -15,7 +15,7 @@ RUN apt-get update \
       && curl -fsL http://downloads.typesafe.com/scala/$SCALA_VERSION/scala-$SCALA_VERSION.tgz | tar xfz - -C / \
       && echo >> /.bashrc \
       && echo 'export PATH=~/scala-$SCALA_VERSION/bin:$PATH' >> /.bashrc \
-      && curl -L -o sbt-$SBT_VERSION.deb http://dl.bintray.com/sbt/debian/sbt-$SBT_VERSION.deb \
+      && curl -L -o sbt-$SBT_VERSION.deb "https://scala.jfrog.io/ui/api/v1/download?repoKey=debian&path=sbt-$SBT_VERSION.deb" \
       && dpkg -i sbt-$SBT_VERSION.deb \
       && rm sbt-$SBT_VERSION.deb \
       && apt-get update \
