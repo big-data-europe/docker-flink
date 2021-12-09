@@ -1,4 +1,4 @@
-name: CI to Docker Hub
+name: build
 
 on: [push, pull_request, workflow_dispatch]
 

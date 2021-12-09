@@ -1,11 +1,11 @@
-FROM bde2020/flink-submit:1.13.0-hadoop3.2
+FROM bde2020/flink-submit:1.14.0-hadoop3.2
 
 LABEL MAINTAINER="Gezim Sejdiu <g.sejdiu@gmail.com>"
 
 ENV FLINK_APPLICATION_JAR_NAME application-1.0
 
 # SBT & Scala
-ENV SCALA_VERSION=2.11.10
+ENV SCALA_VERSION=2.12.13
 ENV SBT_VERSION=1.5.5
 
 
