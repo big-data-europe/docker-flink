@@ -60,7 +60,6 @@ flink-master:
    container_name: flink-master
    environment:
       - INIT_DAEMON_STEP=setup_flink
-#     - "constraint:node==<yourmasternode>"
 
    ports:
      - "8080:8080"
@@ -73,7 +72,6 @@ flink-master:
    environment:
      - FLINK_MASTER_PORT_6123_TCP_ADDR=flink-master
 #    - FLINK_NUM_TASK_SLOTS=2
-#    - "constraint:node==<yourworkernode>"
    depends_on:
       - "flink-master"
 
@@ -86,12 +84,12 @@ flink-master:
 ## Flink Master
 To start a Flink master:
 
-    docker run --name flink-master --net flink-net -e ENABLE_INIT_DAEMON=false -d bde2020/flink-master:1.12.2-hadoop3.2
+    docker run --name flink-master --net flink-net -d bde2020/flink-master:1.12.2-hadoop3.2
 
 ## Flink Worker
 To start a Flink worker:
 
-    docker run --name flink-worker --net flink-net -e ENABLE_INIT_DAEMON=false -e FLINK_MASTER_PORT_6123_TCP_ADDR=flink-master -d bde2020/flink-worker:1.12.2-hadoop3.2
+    docker run --name flink-worker --net flink-net -e FLINK_MASTER_PORT_6123_TCP_ADDR=flink-master -d bde2020/flink-worker:1.12.2-hadoop3.2
 
 ## Launch a Flink application
 Building and running your Flink application on top of the Flink cluster is as simple as extending a template Docker image. Check the template's README for further documentation.

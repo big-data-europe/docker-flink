@@ -7,7 +7,7 @@ ENV HADOOP_VERSION=32
 ENV SCALA_VERSION=2.12
 
 #Enable poc-init-daemon
-ENV ENABLE_INIT_DAEMON true
+ENV ENABLE_INIT_DAEMON false
 ENV INIT_DAEMON_BASE_URI http://identifier/init-daemon
 ENV INIT_DAEMON_STEP flink_master_init
 
