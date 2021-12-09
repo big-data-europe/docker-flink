@@ -5,7 +5,7 @@ FLINK_MASTER_PORT_6123_TCP_ADDR=`host ${FLINK_MASTER_PORT_6123_TCP_ADDR} | grep 
 
 #sed -i -e "s/%jobmanager%/$FLINK_MASTER_PORT_6123_TCP_ADDR/g" /usr/local/flink/conf/flink-conf.yaml
 sed -i -e "s/jobmanager.rpc.address: localhost/jobmanager.rpc.address: ${FLINK_MASTER_PORT_6123_TCP_ADDR}/g" /usr/local/flink/conf/flink-conf.yaml
-sed -i -e "s/taskmanager.numberOfTaskSlots: 1/taskmanager.numberOfTaskSlots: ${FLINK_NUM_TASK_SLOTS}/g" /usr/local/flink/conf/flink-conf.yaml
+sed -i -e "s/taskmanager.numberOfTaskSlots: [0-9]\+/taskmanager.numberOfTaskSlots: ${FLINK_NUM_TASK_SLOTS}/g" /usr/local/flink/conf/flink-conf.yaml
 echo "blob.server.port: 6124" >> /usr/local/flink/conf/flink-conf.yaml
 echo "query.server.port: 6125" >> /usr/local/flink/conf/flink-conf.yaml
 
