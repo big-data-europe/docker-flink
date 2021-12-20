@@ -1,7 +1,7 @@
 version: '2'
 services:
  flink-master:
-   image: bde2020/flink-master:1.14.0-hadoop3.2
+   image: bde2020/flink-master:1.14.2-hadoop3.2
    hostname: flink-master
    container_name: flink-master
 #   networks:
@@ -11,7 +11,7 @@ services:
      - "8081:8081"
 
  flink-worker:
-   image: bde2020/flink-worker:1.14.0-hadoop3.2
+   image: bde2020/flink-worker:1.14.2-hadoop3.2
    hostname: flink-worker
    container_name: flink-worker
 #   networks:
