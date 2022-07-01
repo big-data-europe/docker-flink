@@ -2,7 +2,7 @@ FROM bde2020/hadoop-base:2.0.0-hadoop3.2.1-java8
 
 LABEL MAINTAINER="Gezim Sejdiu <g.sejdiu@gmail.com>"
 
-ENV FLINK_VERSION=1.14.2
+ENV FLINK_VERSION=1.14.5
 ENV HADOOP_VERSION=32
 ENV SCALA_VERSION=2.12
 
